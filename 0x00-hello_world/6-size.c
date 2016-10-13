@@ -1,8 +1,7 @@
 #include <stdio.h>
-
 /**
  * main - print the size of types using sizeof
- * Return 0 to exit
+ * Return: 0 to exit
  */
 
 int main(void)
