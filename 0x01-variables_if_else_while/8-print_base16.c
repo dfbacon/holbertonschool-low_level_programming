@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+/**
+ * main - print 0-9 and a-f
+ * Return: 0 to exit
+ */
+
+int main(void)
+{
+	int n;
+	char l;
+
+	n = 0;
+	while (n <10)
+	{
+		putchar(n + '0');
+		n++;
+	}
+	l = 'a';
+	while (l <= 'f')
+	{
+		putchar(l);
+		l++;
+	}
+	putchar('\n');
+	return (0);
+}
