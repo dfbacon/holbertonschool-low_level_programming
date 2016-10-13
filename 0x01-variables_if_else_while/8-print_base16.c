@@ -7,16 +7,14 @@
 
 int main(void)
 {
-	char n;
-	char l;
+	char l = 'a';
+	char n = '0';
 
-	n = '0';
-	while (n < '9')
+	while (n <= '9')
 	{
 		putchar(n);
 		n++;
 	}
-	l = 'a';
 	while (l <= 'f')
 	{
 		putchar(l);
