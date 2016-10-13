@@ -1,25 +1,27 @@
 #include<stdio.h>
 
 /**
- * main - print single-digit combos w/ commas
- * Return: 0 to exit
+ * main - print 0 to 9 with commas
+ * Return: 0
  */
 
 int main(void)
 {
-	int i;
+	int n;
 
-	i = 0;
-	while(i < 10)
+	n = 0;
+
+	while (n < 10)
 	{
-		putchar(i + '0');
+		putchar(n + '0');
 		if (n < 9)
 		{
 			putchar(',');
 			putchar(' ');
 		}
-		i++;
+		n++;
 	}
+
 	putchar('\n');
 	return (0);
 }
