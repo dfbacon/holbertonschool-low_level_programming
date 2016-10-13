@@ -8,19 +8,22 @@
 int main(void)
 {
 	int i;
+	int n;
 
 	i = 0;
-	while (i < 100)
+	while (i < 10)
 	{
-		if (i < 10)
+		n = 0;
+		while (n < 10)
 		{
-			putchar('0');
-		}
-		putchar(i + '0');
-		if (i < 99)
-		{
-			putchar(',');
-			putchar(' ');
+			putchar(i + '0');
+			putchar(n + '0');
+			if (x + n != 18)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			n++;
 		}
 		i++;
 	}
