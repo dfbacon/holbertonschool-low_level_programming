@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - prints string using printf
  * Return 0 to exit
