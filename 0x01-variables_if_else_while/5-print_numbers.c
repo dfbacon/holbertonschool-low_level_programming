@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int i;
+	char i;
 
 	i = 0;
 	while (i < 10)
@@ -15,6 +15,6 @@ int main(void)
 		printf("%d", i);
 		i++;
 	}
-	printf('/n');
+	putchar('\n');
 	return (0);
 }
