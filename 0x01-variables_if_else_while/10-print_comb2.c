@@ -12,6 +12,7 @@ int main(void)
 
 	i = 0;
 	n = 0;
+
 	while (i < 10)
 	{
 		n = 0;
