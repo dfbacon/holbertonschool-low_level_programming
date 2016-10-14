@@ -10,12 +10,12 @@ int main(void)
 	int i, n, f, s, t, l;
 
 	i = 0;
-	while (i < 100) /*first number pair*/
+	while (i < 100)
 	{
-		f = i / 10; /*1st digit*/
-		s = i % 10; /*2nd digit*/
+		f = i / 10;
+		s = i % 10;
 		n = 0;
-		while (n < 100) /*second number pair*/
+		while (n < 100)
 		{
 			t = n / 10;
 			l = n % 10;
@@ -26,7 +26,7 @@ int main(void)
 				putchar(' ');
 				putchar(t + '0');
 				putchar(l + '0');
-				if (i == 98 && n == 99) /* no comma clause*/
+				if (i == 98 && n == 99)
 				{
 					break;
 				}
