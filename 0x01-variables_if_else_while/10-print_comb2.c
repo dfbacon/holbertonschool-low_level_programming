@@ -17,7 +17,7 @@ int main(void)
 		{
 			putchar(i + '0');
 			putchar(n + '0');
-			if (x + n != 18)
+			if (i + n != 18)
 			{
 				putchar(',');
 				putchar(' ');
