@@ -7,11 +7,8 @@
 
 int main(void)
 {
-	int i;
-	int n;
-
-	i = 0;
-	n = 0;
+	int i = 0;
+	int n = 0;
 
 	while (i < 10)
 	{
