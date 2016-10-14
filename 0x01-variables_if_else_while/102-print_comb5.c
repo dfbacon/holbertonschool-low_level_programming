@@ -13,7 +13,7 @@ int main(void)
 	{
 		f = i / 10;
 		s = i % 10;
-		for (j = 0; j < 100; j++)
+		for (n = 0; n < 100; n++)
 		{
 			t = n / 10;
 			l = n % 10;
