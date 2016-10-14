@@ -9,11 +9,13 @@ int main(void)
 	int i, n;
 	int f, s, t, l;
 
-	for (i = 0; i < 100; i++)
+	i = 0;
+	while (i < 100)
 	{
 		f = i / 10;
 		s = i % 10;
-		for (n = 0; n < 100; n++)
+		n = 0;
+		while (n < 100)
 		{
 			t = n / 10;
 			l = n % 10;
@@ -30,7 +32,9 @@ int main(void)
 					putchar(' ');
 				}
 			}
+			n++;
 		}
+		i++;
 	}
 	putchar('\n');
 	return (0);
