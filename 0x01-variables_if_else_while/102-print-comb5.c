@@ -7,14 +7,13 @@
 
 int main(void)
 {
-	int i, n, f, s, t, l;
+	int i = 0, n = 0;
+	int f, s, t, l;
 
-	i = 0;
 	while (i < 100)
 	{
 		f = i / 10;
 		s = i % 10;
-		n = 0;
 		while (n < 100)
 		{
 			t = n / 10;
