@@ -2,12 +2,12 @@
 #include "holberton.h"
 
 /**
- * main-print alphabet
+ * print_alphabet - calls print_alphabet function
  *
- * Return: 0
+ * Return: void
  */
 
-int main(void)
+void print_alphabet(void)
 {
 	char l;
 
@@ -18,5 +18,4 @@ int main(void)
 		l++;
 	}
 	_putchar('\n');
-	return (0);
 }
