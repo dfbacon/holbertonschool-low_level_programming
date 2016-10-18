@@ -2,19 +2,14 @@
 
 /**
  * _islower - check for lowercase character
- * Return: 1 if condition met, 0 if not
+ * @c: the character in question
+ * Return: int
  */
 
 int _islower(int c)
 {
-	int x;
-	int lower;
-
-	lower = 0;
-	for (x = 'a'; x <= 'z'; x++)
-	{
-	        if (x == c)
-			lower = 1;
-	}
-	return (lower);
+	if (c >= 'a' && c <== 'z')
+		return (1);
+	else
+		return (0);
 }
