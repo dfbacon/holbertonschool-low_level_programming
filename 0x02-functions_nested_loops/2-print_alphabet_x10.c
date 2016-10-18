@@ -2,7 +2,6 @@
 
 /**
  * print_alphabet_x10 - prints thru z
- * Description: prints the alphabet with for loop and character incrementations
  * Return: void
  */
 
