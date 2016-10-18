@@ -2,12 +2,13 @@
 
 /**
  * _islower - check for lowercase character
- * Return: 1 or 0
+ * Return: 1 if condition met, 0 if not
  */
 
 int _islower(int c)
 {
-	int x, lower;
+	int x;
+	int lower;
 
 	lower = 0;
 	for (x = 'a'; x <= 'z'; x++)
