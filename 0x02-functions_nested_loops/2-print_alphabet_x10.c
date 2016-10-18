@@ -1,25 +1,27 @@
 #include "holberton.h"
 
 /**
- * print_alphabet_x10 - prints a to z 10 times
- *
+ * print_alphabet_x10 - prints thru z
+ * Description: prints the alphabet with for loop and character incrementations
  * Return: void
  */
 
 void print_alphabet_x10(void)
 {
-	int i, c;
+	char a;
+	int i;
 
-	i = 0;
-	while (i <= 10)
+
+
+	for (i = 0; i < 10; i++)
 	{
-		c = 'a';
-		while (c <= 'z')
+		a = 'a';
+		while (a <= 'z')
 		{
-			_putchar(c);
-			c++;
+			_putchar(a);
+			a++;
 		}
 		_putchar('\n');
-		i++;
 	}
+
 }
