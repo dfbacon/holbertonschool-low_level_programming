@@ -10,15 +10,13 @@
 
 in _abs(int x)
 {
-	int p;
-
 	if (x >= 0)
 	{
 		return (x);
 	}
-	else if (x < 0)
+	else
 	{
-		p = -x;
-		return (p);
+		x = x * -1;
+		return (x);
 	}
 }
