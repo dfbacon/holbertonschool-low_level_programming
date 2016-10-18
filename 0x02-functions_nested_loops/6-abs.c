@@ -2,21 +2,21 @@
 #include "holberton.h"
 
 /**
- * _abs - compute the absolute value
- * @x: integer in question
+ * _abs - computes absolute value of an integer
+ * @i: interger to computer
  *
- * Return: absolute value
+ * Return: absolute value;
  */
 
-in _abs(int x)
+int _abs(int i)
 {
-	if (x >= 0)
+	if (i < 0)
 	{
-		return (x);
+		i = i * -1;
+		return (i);
 	}
 	else
 	{
-		x = x * -1;
-		return (x);
+		return (i);
 	}
 }
