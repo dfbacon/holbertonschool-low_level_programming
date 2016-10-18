@@ -3,16 +3,16 @@
 
 /**
  * add - add two integers
- * @x: first integer
- * @y: second integer
+ * @f: first integer
+ * @s: second integer
  *
- * Return: result of addition
+ * Return: sum value
  */
 
-int add(int x, int y)
+int add(int f, int s)
 {
-	int z;
+	int t;
 
-	z = x + y;
-	return(z);
+	t = f + s;
+	return(t);
 }
