@@ -3,25 +3,22 @@
 
 /**
  * _abs - compute the absolute value
- * @int: integer in question
+ * @x: integer in question
  *
- * Return: 0
+ * Return: absolute value
  */
 
-in _abs(int)
+in _abs(int x)
 {
-	int n;
 	int p;
 
-	if (int >= 0)
+	if (x >= 0)
 	{
-		_putchar(int);
+		return (x);
 	}
-	else if (int < 0)
+	else if (x < 0)
 	{
-		n = int;
-		p = -n;
-		_putchar(p);
+		p = -x;
+		return (p);
 	}
-	return(0);
 }
