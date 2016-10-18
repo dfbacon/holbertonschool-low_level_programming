@@ -4,46 +4,38 @@
 /**
  * times_table - print multiplication table for 0 to 9
  *
- * Return: nothing
+ * Return: void
  */
 
 void times_table(void)
 {
-	int r, c;
-	int x, y;
-	int m;
+	int x;
+	int y;
 
-
-	for (r = 0; r < 10; r++)
+	for (x = 0; x <= 9; x++)
 	{
-		for (c = 0; c < 10; c++)
+		for (y = 0; y <= 9; y++)
 		{
-			m = r * c;
-			if (m > 9)
+			if (y == 0)
 			{
-				x = m % 10;
-				y = m / 10;
+				_putchar(y * x + '0');
+			}
+
+			else if ((y * x) < 10)
+			{
 				_putchar(' ');
-				_putchar(x + '0');
-				_putchar(y + '0');
+				_putchar(' ');
+				_putchar(x * y + '0');
 			}
 			else
 			{
-				if (c != 0)
-				{
-					_putchar(' ');
-					_putchar(' ');
-				}
+				_putchar(' ');
+				_putchar((x * y) / 10 + '0');
+				_putchar((x * y) % 10 + '0');
 			}
-			if (c != 9)
-			{
+			if (y != 9)
 				_putchar(',');
-			}
-			if (c == 9)
-			{
-				_putchar('/n');
-			}
 		}
-		c = 0;
+		_putchar('\n');
 	}
 }
