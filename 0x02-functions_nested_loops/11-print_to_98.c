@@ -2,8 +2,9 @@
 #include "holberton.h"
 
 /**
- * print_to_98 - print from n to 98
- * @n: int to evaluate
+ * print_to_98 - counts up to 98
+ * @n: counting integer
+ *
  * Return: void
  */
 
@@ -15,11 +16,10 @@ void print_to_98(int n)
 	{
 		for (i = n; i < 98; i++)
 			printf("%d, ", i);
-
 	}
 	else if (n > 98)
 	{
-		for (i =n; i > 98; i--)
+		for (i = n; i > 98; i--)
 			printf("%d, ", i);
 	}
 	printf("98\n");
