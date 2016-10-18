@@ -2,19 +2,18 @@
 
 /**
  * _islower - check for lowercase character
- *
  * Return: 1 or 0
  */
 
 int _islower(int c)
 {
-	int l, ret;
+	int x, lower;
 
-	ret = 0;
-	for (l = 'a'; l <= 'z'; l++)
+	lower = 0;
+	for (x = 'a'; x <= 'z'; x++)
 	{
-	        if (l == c)
-			ret = 1;
+	        if (x == c)
+			lower = 1;
 	}
-	return (ret);
+	return (lower);
 }
