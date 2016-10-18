@@ -2,7 +2,8 @@
 #include "holberton.h"
 
 /**
- * main - print Holberton
+ * main-print Holberton
+ *
  * Return: 0
  */
 
@@ -12,7 +13,7 @@ int main(void)
 	char school[9] = "Holberton";
 
 	i = 0;
-	while (i < 10)
+	while (i < 9)
 	{
 		_putchar(school[i]);
 		++i;
