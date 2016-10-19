@@ -1,27 +1,28 @@
 #include <stdio.h>
-#include "holberton.h"
 
 /**
- * main - print fibonacci sequence
+ * main - print sum of even fibonacci numbers to 4000000
  *
  * Return: 0
  */
 
 int main(void)
 {
-	long i, n, sum, count;
+	long i, n, even_sum, total_sum, max;
 
-	i = 0;
-	n = 1;
-	for (count = 0; count < 50; count++)
+	i = 1;
+	n = 2;
+	max = 4000000;
+	even_sum = 0;
+	total_sum = 0;
+	while (i < max && n < max)
 	{
-		sum = i + n;
+		if ((n % 2) == 0)
+			even_sum += n;
+		total_sum = i + n;
 		i = n;
-		n = sum;
-		if (count != 49)
-			printf("%ld, ", sum);
-		else
-			printf("%ld\n", sum);
+		n = total_sum;
 	}
+	printf("%ld\n", even_sum);
 	return (0);
 }
