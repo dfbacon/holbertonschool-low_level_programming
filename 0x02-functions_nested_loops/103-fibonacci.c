@@ -9,17 +9,21 @@
 
 int main(void)
 {
-	long i, n, f, sum;
+	long i, n, sum_total, sum_even, max;
 
 	i = 0;
 	n = 1;
-	while((f = i + n) < 4000000)
+	max = 4000000;
+	sum_total = 0;
+	sum_even = 0;
+	while(i < max && n < max)
 	{
-		if (f % 2 == 0)
-			sum += f;
+		if ((n % 2) == 0)
+			sum_even += n;
+		sum_total = i + n;
 		i = n;
-		n = sum;
+		n = sum_total;
 	}
-	printf("%ld\n", sum);
+	printf("%ld\n", sum_even);
 	return (0);
 }
