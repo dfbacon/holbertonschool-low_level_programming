@@ -5,7 +5,7 @@
  * print_times_table - print times table for 0 to 15
  * @n: number to be checked
  *
- * Return void
+ * Return: void
  */
 
 void print_times_table(int n)
