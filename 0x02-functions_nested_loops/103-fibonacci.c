@@ -11,8 +11,8 @@ int main(void)
 {
 	long i, n, sum_total, sum_even, max;
 
-	i = 0;
-	n = 1;
+	i = 1;
+	n = 2;
 	max = 4000000;
 	sum_total = 0;
 	sum_even = 0;
