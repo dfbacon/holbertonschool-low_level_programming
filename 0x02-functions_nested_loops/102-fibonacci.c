@@ -2,27 +2,26 @@
 #include "holberton.h"
 
 /**
- * main - print first 50 numbers in fibonacci sequence
+ * main - print fibonacci sequence
  *
  * Return: 0
  */
 
 int main(void)
 {
-	long int i;
-	long int n;
+	long i, n, sum, count;
 
-	n = 0;
-	for (i = 1; i < 51; i++)
+	i = 0;
+	n = 1;
+	for (count = 0; count < 50; count++)
 	{
-		printf("%ld", (n = n + i));
-		if (i == 50)
-			putchar('\n');
+		sum = i + n;
+		i = n;
+		n = sum;
+		if (count != 49)
+			printf("%ld, ", sum);
 		else
-		{
-			putchar(',');
-			putchar(' ');
-		}
+			printf("%ld\n", sum);
 	}
 	return (0);
 }
