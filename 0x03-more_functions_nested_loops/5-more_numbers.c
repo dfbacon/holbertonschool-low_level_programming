@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * more_numbers - print some numbers
+ *
+ * Return: void
+ */
+
 void more_numbers(void)
 {
 	int count, i, x, y;
