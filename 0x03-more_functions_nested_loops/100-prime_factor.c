@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	long d, n;
+	long int d, n;
 
 	n = 612852475143;
 	d = 2;
@@ -21,6 +21,6 @@ int main(void)
 		}
 		d++;
 	}
-	printf("%ld\n", n);
+	printf("%li\n", n);
 	return (0);
 }
