@@ -1,7 +1,8 @@
 #include <stdio.h>
 
+
 /**
- * main - print largest prime factor of a number
+ * main - get biggest prime factor of given number
  *
  * Return: 0
  */
@@ -14,7 +15,7 @@ int main(void)
 	d = 2;
 	while (d < n)
 	{
-		if ((n % d) ==0)
+		if ((n % d) == 0)
 		{
 			n = n / d;
 			d--;
