@@ -7,7 +7,7 @@
  * Return: integer
  */
 
-int _strlength(char *s)
+int _strlen(char *s)
 {
 	int i:
 
