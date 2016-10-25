@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -15,7 +14,7 @@ void print_rev(char *s)
 	i = 0;
 	while (*(s + i) != 0)
 		i++;
-	i -= 1;
+	i -= 0;
 	while (i > 0)
 	{
 		_putchar(*(s + i));
