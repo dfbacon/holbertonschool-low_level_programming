@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * _strlen - returns the length of a string
@@ -17,15 +17,4 @@ int _strlength(char *s)
 		len++;
 	}
 	return (len);
-}
-
-int main(void)
-{
-	char *str;
-	int len;
-
-	str = "Holberton!";
-	len = _strlength(str);
-	printf("%d\n", len);
-	return (0);
 }
