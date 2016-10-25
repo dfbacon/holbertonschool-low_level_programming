@@ -13,7 +13,9 @@ int _strlength(char *s)
 
 	len = 0;
 	for (i = 0; i < *(s + i); i++)
+	{
 		len++;
+	}
 	return (len);
 }
 
