@@ -10,18 +10,22 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int s1_len, s2_len;
+	int sl1, sl2;
 
-	s1_len = 0;
-	while (s1[s1_len] != '\0')
-		s1_len++;
-	s2_len = 0;
-	while (s2[s2_len] != '\0')
-		s2_len++;
-	if (s1_len > s2_len)
-		return (1);
-	else if (s1_len < s2_len)
+	sl1 = 0;
+	sl2 = 0;
+	while (s1[sl1] != '\0')
+	{
+		sl1++;
+	}
+	while (s2[sl2] != '\0')
+	{
+		sl2++;
+	}
+	if (sl1 < sl2)
 		return (-1);
+	else if (sl1 > sl2)
+		return (1);
 	else
 		return (0);
 }
