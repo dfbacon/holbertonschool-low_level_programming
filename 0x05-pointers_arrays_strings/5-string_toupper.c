@@ -1,11 +1,10 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
  * string_toupper - change lowercase letters to upper
  * @c: pointer to char
  *
- * Return: char
+ * Return: character
  */
 
 char *string_toupper(char *c)
@@ -14,8 +13,8 @@ char *string_toupper(char *c)
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
-		if(c[i] >= 'a' && c[i] <= 'z')
+		if (c[i] >= 'a' && c[i] <= 'z')
 			c[i] = c[i] - 32;
 	}
-	return(c);
+	return (c);
 }
