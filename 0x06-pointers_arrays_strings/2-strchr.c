@@ -18,7 +18,7 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			first = &s[i];
+			first = s[i];
 			return (first);
 		}
 		else
