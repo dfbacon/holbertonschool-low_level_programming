@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _strchr - find the first occurence of a character in a string, or NULL
+ * _strchr - find the first occurence of a character in a string
  * @s: string being examined
  * @c: character
  *
@@ -14,9 +14,10 @@ char *_strchr(char *s, char c)
 	{
 		if (*s == c)
 			return (s);
-		else
-			s++;
+		s++;
 	}
-	if (*s == '\0')
-		return ('\n');
+	if (*s == c)
+		return (s);
+	else
+		return ('\0');
 }
