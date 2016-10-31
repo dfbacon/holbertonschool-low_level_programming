@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -10,23 +11,39 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
-	char *found;
+	/* pointer to pointer */
+	char *str;
+	char *target;
 
-	/* define the needle */
-	for (j = 0; needle[j] != '\0'; j++)
+	while (*haystack != '\0')
 	{
-		/* find the needle */
-		for (i = 0; haystack[i] != '\0'; i++)
+		str = haystack;
+		target = needle;
+		while (*haystack != '\0')
 		{
-			if (needle[j] == haystack[i])
+			str = haystack;
+			target = needle;
+			while (*target == *haystack && *haystack != 0
+			       && *target != 0)
 			{
-				found = &haystack[i];
-				return (found);
+				haystack++;
+				target++;
 			}
+			if (*target == 0)
+				return (str);
+			haystack = str + 1;
 		}
 	}
-	if (j == '\0')
-		found = '\0';
-	return (found);
+	return (0);
+}
+
+int main(void)
+{
+	char *s = "hello, world";
+	char *f = "world";
+	char *t;
+
+	t = _strstr(s, f);
+	printf("%s\n", t);
+	return (0);
 }
