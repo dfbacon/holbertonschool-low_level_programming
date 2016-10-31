@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -21,9 +22,24 @@ char *_strchr(char *s, char c)
 			first = &s[i];
 			return (first);
 		}
+		else if ((s[1] + 1) == c)
+		{
+			first = &s[i] + 1;
+			return (first);
+		}
 		i++;
 	}
 	if (s[i] == '\0')
 		first = '\0';
 	return (first);
+}
+
+int main(void)
+{
+	char *s = "hello";
+	char *f;
+
+	f = _strchr(s, 'l');
+	printf("%s\n", f);
+	return (0);
 }
