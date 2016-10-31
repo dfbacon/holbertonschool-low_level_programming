@@ -10,21 +10,13 @@
 
 char *_strchr(char *s, char c)
 {
-	int i;
-	char *first;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] == c)
-		{
-			first = s[i];
-			return (first);
-		}
+		if (*s == c)
+			return (s);
 		else
-			i++;
+			s++;
 	}
-	if (s[i] == '\0')
-		first = '\0';
-	return (first);
+	if (*s == '\0')
+		return ('\n');
 }
