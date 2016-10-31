@@ -22,7 +22,7 @@ char *_strchr(char *s, char c)
 			first = &s[i];
 			return (first);
 		}
-		else if ((s[1] + 1) == c)
+		else if ((s[i] + 1) == c)
 		{
 			first = &s[i] + 1;
 			return (first);
