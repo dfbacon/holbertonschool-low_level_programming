@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -11,7 +10,6 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	/* pointer to pointer */
 	char *str;
 	char *target;
 
@@ -34,16 +32,5 @@ char *_strstr(char *haystack, char *needle)
 			haystack = str + 1;
 		}
 	}
-	return (0);
-}
-
-int main(void)
-{
-	char *s = "hello, world";
-	char *f = "world";
-	char *t;
-
-	t = _strstr(s, f);
-	printf("%s\n", t);
 	return (0);
 }
