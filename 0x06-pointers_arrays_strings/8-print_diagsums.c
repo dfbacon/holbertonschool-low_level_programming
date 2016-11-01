@@ -16,12 +16,16 @@ void print_diagsums(int *a, int size)
 	i = 0;
 	init_value = 0;
 	sum = total = 0;
+
+	/* top left to bottom right */
 	while (i < (size * size))
 	{
 		init_value = a[i];
 		sum = sum + init_value;
 		i = i + size + 1;
 	}
+
+	/* top right to bottom left */
 	i = size - 1;
 	while (i < ((size * size) - 1))
 	{
