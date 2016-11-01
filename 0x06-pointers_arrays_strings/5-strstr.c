@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 
 /**
  * _strstr - finds the first occurence of a substring
@@ -7,7 +8,6 @@
  * Description: find the "needle" in the "haystack"
  * Return: pointer to the beginning of the substring
  */
-
 char *_strstr(char *haystack, char *needle)
 {
 	char *str;
@@ -32,5 +32,5 @@ char *_strstr(char *haystack, char *needle)
 			haystack = str + 1;
 		}
 	}
-	return (0);
+	return (NULL);
 }

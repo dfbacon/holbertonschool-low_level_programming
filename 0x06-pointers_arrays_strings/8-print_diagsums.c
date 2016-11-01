@@ -8,7 +8,6 @@
  *
  * Return: nothing
  */
-
 void print_diagsums(int *a, int size)
 {
 	int i, init_value, sum, total;
