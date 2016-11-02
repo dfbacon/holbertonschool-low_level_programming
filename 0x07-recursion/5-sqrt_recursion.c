@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -14,23 +13,23 @@ int _sqrt_recursion(int n)
 	else if (n == 1)
 		return (1);
 	else if (n < 0)
-		n = -n;
+		return (-1);
 	return (calc(n, 1));
 }
 
 /**
  * calc - find square root if available
  * @n: number
- * @g: guess number to begin checking n
+ * @i: guess number to begin checking n
  *
- * Return: int g or -1
+ * Return: int i or -1
  */
-int calculator(int n, int g)
+int calc(int n, int i)
 {
-	if (n == (g * g))
-		return (g);
-	else if (n > (g * g))
-		return (calculator(n, g + 1));
+	if (n == (i * i))
+		return (i);
+	else if (n > (i * i))
+		return (calc(n, i + 1));
 	else
 		return (-1);
 }
