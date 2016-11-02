@@ -15,11 +15,11 @@ int _sqrt_recursion(int n)
 		return (1);
 	else if (n < 0)
 		n = -n;
-	return (calculator(n, 1));
+	return (calc(n, 1));
 }
 
 /**
- * calculator - find square root if available
+ * calc - find square root if available
  * @n: number
  * @g: guess number to begin checking n
  *
