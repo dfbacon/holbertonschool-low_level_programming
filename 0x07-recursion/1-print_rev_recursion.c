@@ -16,11 +16,10 @@ void _print_rev_recursion(char *s)
 	else if (*s == '\0')
 	{
 		s--;
-		while (*s != '\n')
+		while (*s)
 		{
 			_putchar(*s);
 			s--;
 		}
-		_putchar('\n');
 	}
 }
