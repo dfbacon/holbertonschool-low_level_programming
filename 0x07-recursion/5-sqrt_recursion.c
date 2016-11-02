@@ -5,7 +5,7 @@
  * _sqrt_recursion - calculate the square root of a number
  * @n: number
  *
- * Return: int value
+ * Return: int value or -1 if not natural
  */
 int _sqrt_recursion(int n)
 {
@@ -21,35 +21,20 @@ int _sqrt_recursion(int n)
 /**
  * calc - find sqrt
  * @n: number
- * @i: incrementor
- * Return: -1;
+ * @guess: guess number to begin checking
+ * Return: int guess or -1;
  */
-
-int calc(int n, int i)
+int calc(int n, int guess)
 {
-	if (n == (i * i))
-		return (i);
-	else if (n > (i * i))
-		return (calc(n, i + 1));
+	/* if guess is correct */
+	if (n == (guess * guess))
+		return (guess);
+
+	/* if guess is too low */
+	else if (n > (guess * guess))
+		return (calc(n, guess + 1));
+
+	/* all other cases */
 	else
 		return (-1);
-}
-
-int main(void)
-{
-	int r;
-
-	r = _sqrt_recursion(1);
-	printf("%d\n", r);
-	r = _sqrt_recursion(1024);
-	printf("%d\n", r);
-	r = _sqrt_recursion(16);
-	printf("%d\n", r);
-	r = _sqrt_recursion(17);
-	printf("%d\n", r);
-	r = _sqrt_recursion(25);
-	printf("%d\n", r);
-	r = _sqrt_recursion(-1);
-	printf("%d\n", r);
-	return (0);
 }
