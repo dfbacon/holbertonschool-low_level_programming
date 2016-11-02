@@ -15,26 +15,22 @@ int _sqrt_recursion(int n)
 		return (1);
 	else if (n < 0)
 		n = -n;
-	return (calc(n, 1));
+	return (calculator(n, 1));
 }
 
 /**
- * calc - find sqrt
+ * calculator - find square root if available
  * @n: number
- * @guess: guess number to begin checking
- * Return: int guess or -1;
+ * @g: guess number to begin checking n
+ *
+ * Return: int g or -1
  */
-int calc(int n, int guess)
+int calculator(int n, int g)
 {
-	/* if guess is correct */
-	if (n == (guess * guess))
-		return (guess);
-
-	/* if guess is too low */
-	else if (n > (guess * guess))
-		return (calc(n, guess + 1));
-
-	/* all other cases */
+	if (n == (g * g))
+		return (g);
+	else if (n > (g * g))
+		return (calculator(n, g + 1));
 	else
 		return (-1);
 }
