@@ -1,6 +1,38 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "holberton.h"
+
+/**
+ * _strlen_recursion - find and return the length of a string
+ * @s: pointer to a string
+ *
+ * Return: int length
+ */
+int _strlen_recursion(char *s)
+{
+		int i;
+
+		i = 0;
+		if (*s == '\0')
+			return (i);
+		i++;
+		return (i + _strlen_recursion(s + i));
+}
+
+/**
+ * _strcheck - check for palindrome
+ * @s: string
+ * @last: last char in s
+ * @i: counter
+ *
+ * Return: 0 for match, 1 otherwise
+ */
+int _strcheck(char *s, int last, int i)
+{
+	if (i >= ((last + 1) / 2))
+		return (1);
+	if (*(s + i) != *(s + last - i))
+		return (0);
+	return (_strcheck(s, last, i + 1));
+}
 
 /**
  * is_palindrome - check if a word is a palindrome
@@ -8,46 +40,10 @@
  *
  * Return: 1 if palindrome, 0 otherwise
  */
-
 int is_palindrome(char *s)
 {
-	static char *p;
+	int length;
 
-	p = s;
-	if (
-	if (*s != '\0')
-	{
-		if (*s != *p)
-			return (0);
-		if (*s == *p)
-		{
-			p--;
-			return (is_palindrome(s++));
-		}
-		return (1);
-	}
-	else if (*s == '\0')
-		return (1);
-	else
-		return (0);
-}
-
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	int r;
-
-	r = is_palindrome("level");
-	printf("%d\n", r);
-	r = is_palindrome("redder");
-	printf("%d\n", r);
-	r = is_palindrome("holberton");
-	printf("%d\n", r);
-	r = is_palindrome("step on no pets");
-	printf("%d\n", r);
-	return (0);
+	length = _strlen_recursion(s);
+	return (_strcheck(s, length - 1, 0));
 }
