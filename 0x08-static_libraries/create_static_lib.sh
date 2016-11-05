@@ -1,2 +1,2 @@
 #!/bin/bash
-gccw -c *.c || ar rcs liball.a *.o
+gcc -Wall -c *.c || ar rcs liball.a *.o
