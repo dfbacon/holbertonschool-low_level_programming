@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * _strdup - copy a string
@@ -29,24 +28,4 @@ char *_strdup(char *str)
 	}
 	s[n] = '\0';
 	return (s);
-}
-
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	char *s;
-
-	s = _strdup("");
-	if (s == NULL)
-	{
-		printf("failed to allocate memory\n");
-		return (1);
-	}
-	printf("%s\n", s);
-	free(s);
-	return (0);
 }
