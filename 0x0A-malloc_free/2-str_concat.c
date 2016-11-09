@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "holberton.h"
 
 /**
  * str_concat - concatenate two strings
@@ -9,30 +10,34 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *str;
-	unsigned int i, j, k;
+	unsigned int i, n, t;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	i = 0;
 	while (s1[i])
 		i++;
-	for (j = 0; s2[j]; j++)
-		;
-	j++;
-	str = malloc((i + j) * sizeof(*str));
+	n = 0;
+	while (s2[n])
+		n++;
+	str = malloc(((i + n) * sizeof(*str)) + 1);
 	if (str == NULL)
 		return (NULL);
-	k = 0;
-	while (s1[k])
+	t = 0;
+	while (s1[t])
 	{
-		str[k] = s1[k];
-		k++;
+		str[t] = s1[t];
+		t++;
 	}
-	j = 0;
-	while (s2[j])
+	n = 0;
+	while (s2[n])
 	{
-		str[k] = s2[j];
-		k++;
-		j++;
+		str[t] = s2[n];
+		t++;
+		n++;
 	}
-	str[k] = '\0';
+	str[t] = '\0';
 	return (str);
 }
