@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
- * string_noncat - concatenate a number of bytes of two strings
+ * string_nconcat - concatenate a number of bytes of two strings
  * @s1: string one
  * @s2: string two
  * @n: number of bytes to copy
@@ -66,14 +66,4 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		str[k] = '\0';
 	}
 	return (str);
-}
-
-int main(void)
-{
-	char *concat;
-
-	concat = string_nconcat("Holberton ", "School !!!", 6);
-	printf("%s\n", concat);
-	free(concat);
-	return (0);
 }
