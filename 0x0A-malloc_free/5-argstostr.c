@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * argstostr - concatenates all arguments
@@ -11,61 +10,37 @@
  */
 char *argstostr(int ac, char **av)
 {
-	char *str;
-	int i, n, t, l;
+	char *str, *str_2;
+	int i, j, count;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	i = 0;
-	l = 0;
-	while (i < ac)
+	for (i = 0; i < ac; i++)
 	{
-		n = 0;
-		while (av[i][n])
+		j = 0;
+		while (av[i][j] != '\0')
 		{
-			l++;
-			n++;
+			j++;
+			count++;
 		}
-		l++;
-		i++;
+		count++;
 	}
-	l++;
-	str = malloc(ac * sizeof(*str));
+	count++;
+	str = malloc(count * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	i = 0;
-	t = 0;
-	while (i < ac)
+	str_2 = str;
+	for (i = 0; i < ac; i++)
 	{
-		n = 0;
-		while (av[i][n])
+		j = 0;
+		while (av[i][j] != '\0')
 		{
-			str[t] = av[i][n];
-			t++;
-			n++;
+			*str = av[i][j];
+			j++;
+			str++;
 		}
-		str[t] = '\n';
-		t++;
-		i++;
+		*str = '\n';
+		str++;
 	}
-	return (str);
-}
-
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(int ac, char *av[])
-{
-	char *s;
-
-	s = argstostr(ac, av);
-	if (s == NULL)
-	{
-		return (1);
-	}
-	printf("%s", s);
-	free(s);
-	return (0);
+	return (str_2);
 }
