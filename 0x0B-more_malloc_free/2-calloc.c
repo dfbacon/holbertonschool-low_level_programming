@@ -24,6 +24,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		p[i] = 0;
 		i++;
 	}
-/* maybe set last p[i] value to \0 */
 	return (p);
 }

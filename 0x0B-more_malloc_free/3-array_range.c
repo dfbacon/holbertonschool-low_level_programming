@@ -13,16 +13,12 @@ int *array_range(int min, int max)
 	int *array;
 	int array_size, i, counter;
 
-/* if min > max then return NULL */
 	if (min > max)
 		return (NULL);
-
-/* array has all values from (and including) min to max */
 	array_size = (max - min) + 1;
 	array = malloc(array_size * sizeof(*array));
 	if (array == NULL)
 		return (NULL);
-/* array ordered from min to max */
 	i = min;
 	counter = 0;
 	while (counter <= array_size)
@@ -36,7 +32,6 @@ int *array_range(int min, int max)
 		i++;
 		counter++;
 	}
-/* add \0 to the end?? */
 	array[counter] = '\0';
 	return (array);
 }
