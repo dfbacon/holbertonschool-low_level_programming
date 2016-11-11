@@ -26,12 +26,12 @@ void print_number(int n)
 				_putchar((n / i) % 10 + '0');
 			else
 			{
-				_putchar(n %10 + '0');
+				_putchar(n % 10 + '0');
 				n = 0;
 			}
 		}
 		if (i > 1)
-			i = i /10;
+			i = i / 10;
 		else
 			i = 0;
 	}
