@@ -17,13 +17,18 @@ void print_number(int n)
 		n *= -1;
 	}
 	else if (n == 0)
+	{
 		_putchar('0');
+	}
+
 	while (i > 0)
 	{
 		if (n >= i)
 		{
 			if (i >= 10)
+			{
 				_putchar((n / i) % 10 + '0');
+			}
 			else
 			{
 				_putchar(n % 10 + '0');
