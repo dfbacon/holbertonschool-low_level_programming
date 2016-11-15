@@ -1,35 +1,5 @@
 #include "dog.h"
-#include "holberton.h"
 #include <stdlib.h>
-
-/**
- * _strdup - copy a string
- * @str: string
- *
- * Return: pointer to copy
- */
-char *_strdup(char *str)
-{
-	char *s;
-	unsigned int i, n;
-
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (str[i])
-		i++;
-	s = malloc((i * sizeof(char)) + 1);
-	if (s == NULL)
-		return (NULL);
-	n = 0;
-	while (n < i)
-	{
-		s[n] = str[n];
-		n++;
-	}
-	s[n] = '\0';
-	return (s);
-}
 
 /**
  * new_dog - create a new dog structure
@@ -42,23 +12,28 @@ char *_strdup(char *str)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *ptr;
+	int len_1, len_2, i;
 
-	ptr = malloc(sizeof(struct dog_t));
+	len_1 = len_2 = i = 0;
+	while (name[len_1])
+		len_1++;
+	while (owner[len_2])
+		len_2++;
+
+	ptr = malloc(sizeof(dog_t));
 	if (ptr == NULL)
 		return (NULL);
-	ptr->name = _strdup(name);
-	if (ptr->name == NULL)
-	{
-		free(ptr);
-		return (NULL);
-	}
+	ptr->name = malloc(len_1);
+	ptr->owner = malloc(len_2);
+	do {
+		ptr->name[i] = name[i];
+	} while (name[i])
+		i++;
+	i = 0;
+	do {
+		ptr->owner[i] = owner[i];
+	} while (owner[i])
+		i++;
 	ptr->age = age;
-	ptr->owner = _strdup(owner);
-	if (ptr->owner == NULL)
-	{
-		free(ptr->name);
-		free(ptr);
-		return (NULL);
-	}
 	return (ptr);
 }
