@@ -7,7 +7,7 @@
  * @size: number of array elements
  * @cmp: pointer to function
  *
- * Retrun: index of first int element, 0, or -1
+ * Return: index of first int value, 0 or -1
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
