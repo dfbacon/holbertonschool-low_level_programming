@@ -1,13 +1,11 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include "3-calc.h"
-#include "function_pointers.h"
+
 /**
  * get_op_func - select the correct op function
  * @s: pointer containing operator
  * Return: int from op function
  */
-
 int (*get_op_func(char *s))(int a, int b)
 {
 	int i;

@@ -1,15 +1,15 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "3-calc.h"
 
 /**
- * main - computer op of two numbers
+ * main - computes op of two numbers
  * @argc: number of arguments
- * @argv: value of arguments
+ * @argv: pointer to array of characters
  *
  * Return: 0
  */
-int main (int argc, char *argv[])
+int main (int argc, char **argv)
 {
 	int num1, num2, result;
 	char operator;
