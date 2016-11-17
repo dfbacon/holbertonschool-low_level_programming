@@ -1,11 +1,11 @@
 #include "3-calc.h"
 
 /**
- *op_add - returns the sum of a and b
- *@a: num1
- *@b: num2
+ * op_add - operation to add two integers together
  *
- *Return: sum
+ * @a: integer a
+ * @b: integer b
+ * Return: returns result of operation
  */
 int op_add(int a, int b)
 {
@@ -13,11 +13,11 @@ int op_add(int a, int b)
 }
 
 /**
- *op_sub - returns the difference of a and b
- *@a: num1
- *@b: num2
+ * op_sub - operation to subtract two integers
  *
- *Return: difference
+ * @a: integer a
+ * @b: integer b
+ * Return: returns result of operation
  */
 int op_sub(int a, int b)
 {
@@ -25,11 +25,11 @@ int op_sub(int a, int b)
 }
 
 /**
- *op_mul - returns the product of a and b
- *@a: num1
- *@b: num2
+ * op_mul - operation to multiply two integers together
  *
- *Return: product
+ * @a: integer a
+ * @b: integer b
+ * Return: returns result of operation
  */
 int op_mul(int a, int b)
 {
@@ -37,11 +37,11 @@ int op_mul(int a, int b)
 }
 
 /**
- *op_div - returns the result of the division of a by b
- *@a: num1
- *@b: num2
+ * op_div - operation to divide two integers
  *
- *Return: result
+ * @a: integer a
+ * @b: integer b
+ * Return: returns result of operation
  */
 int op_div(int a, int b)
 {
@@ -49,11 +49,11 @@ int op_div(int a, int b)
 }
 
 /**
- *op_mod - returns the remainder of the division of a by b
- *@a: num1
- *@b: num2
+ * op_mod - modulus two integers
  *
- *Return: remainder
+ * @a: integer a
+ * @b: integer b
+ * Return: returns result of operation
  */
 int op_mod(int a, int b)
 {

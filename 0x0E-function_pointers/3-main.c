@@ -1,47 +1,37 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "3-calc.h"
-
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 /**
- * main - computes op of two numbers
- * @argc: number of arguments
- * @argv: pointer to array of characters
+ * main - perform simple operations
+ * @argc: argument count
+ * @argv: array of arguments
  *
- * Return: 0
+ * Return: 0 to exit
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int num1, num2, result;
-	char operator;
+	int result;
+	int (*func)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
-	operator = argv[2][0];
-
-	if ((operator != '+' && operator != '-' && operator != '*' &&
-	     operator != '/' && operator != '%') ||
-	    argv[2] == NULL || argv[2][1] != '\0')
+	func = get_op_func(argv[2]);
+	if (func == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-
-	if ((operator == '/' || operator == '%') && num2 == 0)
+	if ((*argv[2] == '/' || *argv[2] == '%') && *argv[3] == '0')
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	result = (*get_op_func)(&operator)(num1, num2);
+	result = func(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", result);
 	return (0);
 }
