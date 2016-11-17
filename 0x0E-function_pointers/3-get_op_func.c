@@ -1,9 +1,10 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "3-calc.h"
 
 /**
  * get_op_func - select the correct op function
  * @s: pointer containing operator
+ *
  * Return: int from op function
  */
 int (*get_op_func(char *s))(int a, int b)
@@ -21,7 +22,7 @@ int (*get_op_func(char *s))(int a, int b)
 	i = 0;
 	while (i < 5)
 	{
-		if (*ops[i].op == *s)
+		if (*ops[i].op == *s && *(s + 1) == '\0')
 			return (ops[i].f);
 		i++;
 	}
