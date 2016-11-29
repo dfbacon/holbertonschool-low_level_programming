@@ -1,6 +1,6 @@
 section .data	; Data section, initialized variables
 
-	msg db "Hello world", 0 ; C string needs 0
+	msg db "Hello Holberton", 0 ; C string needs 0
 	fmt db "%s", 10, 0      ; The printf format, "\n",'0'
 	section .text	; Code section.
 	global main	; the standard gcc entry point
