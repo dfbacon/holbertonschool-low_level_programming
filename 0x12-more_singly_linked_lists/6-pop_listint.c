@@ -12,15 +12,13 @@ int pop_listint(listint_t **head)
 	int value_save;
 
 	target = *head;
-	if (target)
+	if (target == NULL)
+		return (0);
+	if (target->next)
 	{
-		if (target->next)
-		{
-			*head = target->next;
-			value_save = target->n;
-			free(target);
-			return (value_save);
-		}
+		*head = target->next;
+		value_save = target->n;
+		free(target);
+		return (value_save);
 	}
-	return (0);
 }
