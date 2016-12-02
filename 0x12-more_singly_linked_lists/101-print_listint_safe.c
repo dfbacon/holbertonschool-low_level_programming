@@ -38,17 +38,30 @@ void free_node(const listint_t *head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *new, *temp;
+	listint_t *temp, *new;
 	size_t count;
 
 	new = NULL;
 	count = 0;
 	while (head)
 	{
-		temp = head;
-		while ()
+		temp = new;
+		while (temp)
+		{
+			if (temp->next == head)
+			printf("[%p] %d", &head, head->n);
+			/* pass temp to check_node */
+		}
+/* when temp == NULL */
+		printf("[%p] %d", &head, head->n);
+/* pass temp to check_node */
+			/* add code */
+/* advance head */
+		head = head->next;
+		count++;
 	}
-
+	free_node(new);
+	return (count);
 }
 
 /**
