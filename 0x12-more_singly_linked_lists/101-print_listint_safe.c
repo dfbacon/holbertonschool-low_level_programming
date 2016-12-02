@@ -18,8 +18,16 @@ size_t check_node(const listint_t **head, const listint_t *n)
  *
  * Return: void
  */
-void free_node(const listint_t **head)
+void free_node(const listint_t *head)
 {
+	listint_t *temp;
+
+	while (head)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
 }
 
 /**
