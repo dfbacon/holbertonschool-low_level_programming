@@ -8,7 +8,7 @@
  *
  * Return: pointer to new element
  */
-size_t check_node(const listint_t **head, const listint_t *n)
+size_t check_node(const listptr_t **head, const listptr_t *n)
 {
 }
 
@@ -18,7 +18,7 @@ size_t check_node(const listint_t **head, const listint_t *n)
  *
  * Return: void
  */
-void free_node(const listint_t *head)
+void free_node(const listptr_t *head)
 {
 	listint_t *temp;
 
@@ -31,14 +31,14 @@ void free_node(const listint_t *head)
 }
 
 /**
- * print_listint_safe - prints a listint_t linked list
+ * print_listint_safe - prints a linked list containing loops
  * @head: pointer to listint_t linked list
  *
  * Return: number of elements
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *temp, *new;
+	listptr_t *temp, *new;
 	size_t count;
 
 	new = NULL;
@@ -48,9 +48,13 @@ size_t print_listint_safe(const listint_t *head)
 		temp = new;
 		while (temp)
 		{
-			if (temp->next == head)
-			printf("[%p] %d", &head, head->n);
-			/* pass temp to check_node */
+			if (temp->store == head)
+			{
+				printf("-> [%p] %d", &head, head->n);
+				free_node(temp);
+				return (count);
+			}
+			temp = temp->next;
 		}
 /* when temp == NULL */
 		printf("[%p] %d", &head, head->n);

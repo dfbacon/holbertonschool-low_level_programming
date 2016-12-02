@@ -16,6 +16,17 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/**
+ * listprt_s - singly linked list
+ * @store: pointer to store
+ * @next: next pointer to node
+ */
+typedef struct listptr_s
+{
+	void *store;
+	struct listptr_s *next;
+} listptr_t;
+
 int _putchar(char c);
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
@@ -26,6 +37,8 @@ void free_listint2(listint_t **head);
 int pop_listint(listint_t **head);
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 int sum_listint(listint_t *head);
+size_t check_node(const listptr_t **head, const listptr_t *n);
+size_t free_node(const listptr_t *head);
 
 /**
  * insert_nodeint_at_index - inserts a new node at a given position
