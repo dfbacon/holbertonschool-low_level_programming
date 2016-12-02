@@ -10,6 +10,18 @@
  */
 size_t check_node(const listptr_t **head, const listptr_t *n)
 {
+	listprt_t *new;
+
+	new = malloc(sizeof(listptr_t));
+	if (new == NULL)
+	{
+		free_node(*head);
+		exit(98);
+	}
+	new->store = &n;
+	new->next = *head;
+	*head = new;
+	return (new);
 }
 
 /**
@@ -56,11 +68,8 @@ size_t print_listint_safe(const listint_t *head)
 			}
 			temp = temp->next;
 		}
-/* when temp == NULL */
 		printf("[%p] %d", &head, head->n);
-/* pass temp to check_node */
-			/* add code */
-/* advance head */
+		check_node(new, head);
 		head = head->next;
 		count++;
 	}
