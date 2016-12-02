@@ -8,9 +8,9 @@
  *
  * Return: pointer to new element
  */
-size_t check_node(const listptr_t **head, const listptr_t *n)
+size_t check_node(listptr_t **head, const listptr_t *n)
 {
-	listprt_t *new;
+	listptr_t *new;
 
 	new = malloc(sizeof(listptr_t));
 	if (new == NULL)
@@ -18,7 +18,7 @@ size_t check_node(const listptr_t **head, const listptr_t *n)
 		free_node(*head);
 		exit(98);
 	}
-	new->store = &n;
+	new->store = (void *)n;
 	new->next = *head;
 	*head = new;
 	return (new);
@@ -30,7 +30,7 @@ size_t check_node(const listptr_t **head, const listptr_t *n)
  *
  * Return: void
  */
-void free_node(const listptr_t *head)
+void free_node(listptr_t *head)
 {
 	listint_t *temp;
 
