@@ -1,52 +1,5 @@
 #include "holberton.h"
-#include <stdio.h> /* remove me */
-
-/**
- * print_binary - prints the binary representation of a number
- * @n: number to be examined
- *
- * Return: void
- */
-void print_binary(unsigned long int n)
-{
-	int i, j, k;
-	unsigned long int *binary;
-
-	binary = malloc(n * sizeof(int));
-	if (binary == NULL)
-		return (-1);
-	if (n == 0)
-	{
-		putchar('0');
-		return;
-	}
-	i = 31;
-	while (i >= 0)
-	{
-		j = n >> i;
-		if (j & 1)
-		{
-			k = i;
-			break;
-		}
-		else
-		{
-			i--;
-			k = i;
-		}
-	}
-	while (k >= 0)
-	{
-		j = n >> k;
-		if (j & 1)
-			*binary = 1;
-		else
-			*binary = 0;
-		binary++;
-		k--;
-	}
-	return (*binary);
-}
+#include <stdio.h>
 
 /**
  * get_bit - find the value of a bit at a given index
@@ -57,13 +10,16 @@ void print_binary(unsigned long int n)
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int i;
+	int i;
 
-	n = print_binary(n);
-	if (n == -1)
+	/* check if index is greater than # of bites */
+        /* mulitply sizeof by 8 for bits/byte */
+	if (index > sizeof(long) * 8)
 		return (-1);
 
-
+	/* set i to n[index], i.e. move index # of bits to the right in n */
+	i = n >> index & 1;
+	return (i);
 }
 
 /**
