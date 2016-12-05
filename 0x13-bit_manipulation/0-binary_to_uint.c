@@ -23,7 +23,7 @@ unsigned int binary_to_uint(const char *b)
 	b--;
 	u = 0;
 	bit_value = 1;
-	while(*b)
+	while (*b)
 	{
 		if (*b == 48) /* if *b == 0 */
 			u += 0;
