@@ -15,7 +15,6 @@ void print_binary(unsigned long int n)
 		putchar('0');
 		return;
 	}
-
 	/* assuming int = 32 bits (int = 4 bytes * (8 bits/byte) */
 	/* use 31 b/c n is at least one bit */
 	i = 31;
@@ -35,7 +34,6 @@ void print_binary(unsigned long int n)
 			k = i;
 		}
 	}
-
 	/* preceeding 0's not printed, print all bits from this point */
 	while (k >= 0)
 	{
