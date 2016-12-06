@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 	}
 	/* assuming int = 32 bits (int = 4 bytes * (8 bits/byte) */
 	/* use 31 b/c n is at least one bit */
-	i = 31;
+	i = (sizeof(unsigned long) * 8) - 1;
 	while (i >= 0)
 	{
 		/* right shift by i bytes, filling w/ 0's */
