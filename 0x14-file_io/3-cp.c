@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 		}
 		if (i > 0)
 		{
-			cfd = write(wfd, rfd, i);
+			cfd = write(wfd, buf, i);
 			if (cfd == -1)
 			{
 				dprintf(STDERR_FILENO,
@@ -70,13 +70,13 @@ int main(int argc, char *argv[])
 	cfd = close(rfd);
 	if (cfd == -1)
 	{
-		dprintf("Error: Can't close fd %d\n", rfd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", rfd);
 		exit(100);
 	}
 	cfd = close(wfd);
 	if (cfd == -1)
 	{
-		dprintf("Error: Can't close fd %d\n", wfd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", wfd);
 		exit(100);
 	}
 	return (0);
