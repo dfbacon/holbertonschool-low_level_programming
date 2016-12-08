@@ -25,7 +25,7 @@ int _strlen(char *s)
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, len;
+	int fd, len, wfd;
 	char *buf;
 
 	if (filename == NULL)
@@ -35,7 +35,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (buf == NULL)
 		return (-1);
 
-	fd = open(filename, O_APPEND | O_RDWR);
+	fd = open(filename, O_APPEND | O_WRONLY);
 	if (fd == -1)
 	{
 		free(buf);
@@ -48,7 +48,12 @@ int append_text_to_file(const char *filename, char *text_content)
 		free(buf);
 		return (1);
 	}
-	write(fd, text_content, len);
+	wfd = write(fd, text_content, len);
+	if (wfd == -1)
+	{
+		free(buf);
+		return (-1);
+	}
 	close(fd);
 	free(buf);
 	return (1);
