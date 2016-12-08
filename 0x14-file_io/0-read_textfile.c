@@ -2,22 +2,6 @@
 #include <stdio.h> /* remove me */
 
 /**
- * _strlen - find length of string
- * @s: pointer to  string
- *
- * Return: length of s
- */
-unsigned int _strlen(const char *s)
-{
-	int l;
-
-	l = 0;
-	while (*(s++) != '\0')
-		l++;
-	return (l);
-}
-
-/**
  * read_textfile - reads a text file and print it to the POSIX standard output
  * @filename: filename
  * @letters: number of letters to read and print
@@ -26,28 +10,28 @@ unsigned int _strlen(const char *s)
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	unsigned int buf_size;
-	char buf[1024];
+	int fd, rfd;
+	char *buf;
 
 	if (filename == NULL)
 		return (0);
-	if (letters > 1024)
+
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
 		return (0);
-	/* find length of buffer */
-        buf_size = _strlen(filename);
-	/* if letters > buf_size then set buf_size = letters */
-	if (letters >= buf_size)
-		buf_size = letters;
+
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
 
-	read(fd, buf, letters);
-	buf[buf_size + 1] = '\0';
-	printf("%s\n", buf);
+	rfd = read(fd, buf, letters);
+	if (rfd == -1)
+		return (0);
+	else
+		printf("%s", buf);
 	close(fd);
-	return (buf_size);
+	free(buf);
+	return (rfd);
 }
 
 /**
