@@ -33,7 +33,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	wfd = write(STDOUT_FILENO, buf, rfd);
-	if (wfd == -1 || wfd != rfd)
+	if (wfd == -1)
 	{
 		free(buf);
 		return (0);
