@@ -1,5 +1,20 @@
 #include "holberton.h"
-#include <stdio.h>
+
+/**
+ * _strlen - find length of string
+ * @s: pointer to  string
+ *
+ * Return: length of s
+ */
+int _strlen(char *s)
+{
+	int l;
+
+	l = 0;
+	while (*(s++) != '\0')
+		l++;
+	return (l);
+}
 
 /**
  * append_text_to_file - appends text to the end of a file
@@ -10,23 +25,22 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-}
+	int fd, len;
+	char *buf;
 
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(int ac, char **av)
-{
-	int res;
+	len = _strlen(text_content);
+	buf = malloc(sizeof(char) * len);
+	if (buf == NULL)
+		return (-1);
 
-	if (ac != 3)
+	fd = open(filename, O_APPEND);
+	if (fd == -1)
 	{
-		dprintf(2, "Usage: %s filename text\n", av[0]);
-		exit(1);
+		free(buf);
+		return (-1);
 	}
-	res = append_text_to_file(av[1], av[2]);
-	printf("-> %i)\n", res);
-	return (0);
+	write(fd, text_content, len);
+	close(fd);
+	free(buf);
+	return (1);
 }
