@@ -1,5 +1,20 @@
 #include "holberton.h"
-#include <stdio.h> /* remove me */
+
+/**
+ * _strlen - find length of string
+ * @s: pointer to  string
+ *
+ * Return: length of s
+ */
+int _strlen(char *s)
+{
+	int l;
+
+	l = 0;
+	while (*(s++) != '\0')
+		l++;
+	return (l);
+}
 
 /**
  * create_file - creates a file
@@ -10,23 +25,24 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-}
+	int fd, len;
+	char *buf;
 
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(int ac, char **av)
-{
-	int res;
+	len = _strlen(text_content);
+	if (text_content == NULL)
+		text_content = "";
+	buf = malloc(sizeof(char) * len);
+	if (buf == NULL)
+		return (-1);
 
-	if (ac != 3)
+	fd = open(filename, O_CREAT | O_RDWR, 0600);
+	if (fd == -1)
 	{
-		dprintf(2, "Usage: %s filename text\n", av[0]);
-		exit(1);
+		free(buf);
+		return (-1);
 	}
-	res = create_file(av[1], av[2]);
-	printf("-> %i)\n", res);
-	return (0);
+	else
+		write(fd, text_content, len);
+	free(buf);
+	return (1);
 }
