@@ -1,5 +1,4 @@
 #include "holberton.h"
-#define BUFFERSIZE 1204
 
 /**
  * main - copy contents of a file to another file
