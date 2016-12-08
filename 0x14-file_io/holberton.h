@@ -1,12 +1,12 @@
 #ifndef FILE_IO
 #define FILE_IO
+#define BUFFERSIZE 1204
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#define BUFFERSIZE 1204;
 
 int _putchar(char c);
 ssize_t read_textfile(const char *filename, size_t letters);
