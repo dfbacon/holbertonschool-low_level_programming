@@ -41,6 +41,13 @@ int append_text_to_file(const char *filename, char *text_content)
 		free(buf);
 		return (-1);
 	}
+
+	if (text_content == NULL)
+	{
+		close(fd);
+		free(buf);
+		return (1);
+	}
 	write(fd, text_content, len);
 	close(fd);
 	free(buf);
