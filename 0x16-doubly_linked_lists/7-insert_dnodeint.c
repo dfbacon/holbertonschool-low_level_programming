@@ -31,10 +31,10 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 		return (new);
 	}
 	i = 0;
-	while (target && i < idx)
+	while (i < idx - 1)
 	{
 		target = target->next;
-		if (target == NULL && idx - i > 0)
+		if (target == NULL)
 		{
 			free(new);
 			return (NULL);
