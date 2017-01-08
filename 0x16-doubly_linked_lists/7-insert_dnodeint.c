@@ -19,6 +19,9 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 	new = malloc(sizeof(*new));
 	if (new == NULL)
 		return (NULL);
+	target = *head;
+	while (target->prev)
+		target = target->prev;
 	if (idx == 0)
 	{
 		new->n = n;
@@ -28,10 +31,7 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 		*head = new;
 		return (new);
 	}
-	target = *head;
 	i = 0;
-	while (target->prev)
-		target = target->prev;
 	while (target && i < idx)
 	{
 		target = target->next;
