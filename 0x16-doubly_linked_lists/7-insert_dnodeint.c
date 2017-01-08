@@ -14,7 +14,7 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 	dlistint_t *target, *new, *prev;
 	unsigned int i;
 
-	if (*head == NULL)
+	if (*head == NULL && n != 0)
 		return (NULL);
 	new = malloc(sizeof(*new));
 	if (new == NULL)
