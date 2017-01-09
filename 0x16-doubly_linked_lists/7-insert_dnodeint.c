@@ -45,7 +45,7 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **h, unsigned int idx, int n)
 		target = target->next;
 		i++;
 	}
-	if (walk == NULL)
+	if (target == NULL)
 	{
 		free(new);
 		return (NULL);
