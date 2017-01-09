@@ -44,11 +44,11 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **h, unsigned int idx, int n)
 	}
 	if (target == NULL)
 		free(new); return (NULL);
-	prev = target->prev;
-	new->n = n;
-	new->prev = prev;
-	new->next = target;
-	target->prev = new;
+	prev = target;
+	target = target->next;
 	prev->next = new;
+	new->n = n;
+	new->next = target;
+	new->prev = prev;
 	return (new);
 }
