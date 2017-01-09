@@ -3,21 +3,20 @@
 /**
  * insert_dnodeint_at_idx - insert a new node at a given position in a
  * dlistint_t type list
- * @head: pointer to pointer to head of list
+ * @h: pointer to pointer to head of list
  * @idx: index of where the new node should be added, starting from 0
  * @n: value of new node
  *
  * Return: address of new node, or NULL if fail
  */
-dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_idx(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *target, *new, *prev;
 	unsigned int i;
 
-	if (head == NULL && n != 0)
+	if (head == NULL && idx != 0)
 		return (NULL);
-	if (head != NULL)
-		target = *head;
+	target = *head;
 	new = malloc(sizeof(*new));
 	if (new == NULL)
 		return (NULL);
