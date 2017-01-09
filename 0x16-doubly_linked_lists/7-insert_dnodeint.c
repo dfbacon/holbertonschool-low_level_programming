@@ -16,10 +16,10 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **h, unsigned int idx, int n)
 
 	if (h == NULL && idx != 0)
 		return (NULL);
-	target = *h;
 	new = malloc(sizeof(*new));
 	if (new == NULL)
 		return (NULL);
+	target = *h;
 	if (idx == 0)
 	{
 		if (target)
