@@ -38,18 +38,12 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **h, unsigned int idx, int n)
 	while (i < idx - 1)
 	{
 		if (target == NULL)
-		{
-			free(new);
-			return (NULL);
-		}
+			free(new); return (NULL);
 		target = target->next;
 		i++;
 	}
 	if (target == NULL)
-	{
-		free(new);
-		return (NULL);
-	}
+		free(new); return (NULL);
 	prev = target->prev;
 	new->n = n;
 	new->prev = prev;
