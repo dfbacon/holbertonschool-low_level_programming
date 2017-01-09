@@ -22,23 +22,33 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	if (idx == 0)
 	{
+		if (target)
+		{
+			new->next = target;
+			target->prev = new;
+		}
+		else
+			new->next = NULL;
 		new->n = n;
-		new->next = *h;
 		new->prev = NULL;
-		(*h)->prev = new;
 		*h = new;
-		return (new);
+		return (*h);
 	}
 	i = 0;
 	while (i < idx - 1)
 	{
-		target = target->next;
 		if (target == NULL)
 		{
 			free(new);
 			return (NULL);
 		}
+		target = target->next;
 		i++;
+	}
+	if (walk == NULL)
+	{
+		free(new);
+		return (NULL);
 	}
 	prev = target->prev;
 	new->n = n;
