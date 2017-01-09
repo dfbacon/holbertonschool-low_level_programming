@@ -14,19 +14,19 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *target, *new, *prev;
 	unsigned int i;
 
-	if (head == NULL && idx != 0)
+	if (h == NULL && idx != 0)
 		return (NULL);
-	target = *head;
+	target = *h;
 	new = malloc(sizeof(*new));
 	if (new == NULL)
 		return (NULL);
 	if (idx == 0)
 	{
 		new->n = n;
-		new->next = *head;
+		new->next = *h;
 		new->prev = NULL;
-		(*head)->prev = new;
-		*head = new;
+		(*h)->prev = new;
+		*h = new;
 		return (new);
 	}
 	i = 0;
