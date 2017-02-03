@@ -2,9 +2,9 @@
 
 /**
  * key_index - retrieves the index of a key
- *
  * @key: the key being indexed
  * @size: size of the array of the hash table
+ *
  * Return: the index where the key/value pair is stored in the array of the
  * hash table
  */
