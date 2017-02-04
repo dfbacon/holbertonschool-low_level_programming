@@ -9,5 +9,25 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
+	hash_node_t *temp;
+	unsigned long int index;
+	int i;
 
+	if (ht == NULL || key == NULL)
+		return (NULL);
+
+	index = hash_djb2((const unsigned char *)key);
+	index = index % ht->size;
+	temp = ht->array[index];
+	if (temp == NULL)
+		return (NULL);
+
+	while (temp)
+	{
+		i = strcmp(temp->key, key);
+		if (i == 0)
+			return (temp->value);
+		temp = temp->next;
+	}
+	return (NULL);
 }
