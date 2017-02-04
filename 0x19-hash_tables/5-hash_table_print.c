@@ -45,6 +45,7 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		head = ht->array[index];
 		i = ht_print_helper(head, i);
+		index++;
 	}
 	printf("}\n");
 }
