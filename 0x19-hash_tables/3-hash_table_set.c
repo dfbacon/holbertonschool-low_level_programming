@@ -7,7 +7,7 @@
  * @value: value for @key
  * Return: new node if success, NULL if fail
  */
-hash_node_t *hash_table_helper(const char key, const char *value)
+hash_node_t *hash_table_helper(const char *key, const char *value)
 {
 	hash_node_t *new_node;
 	char *temp_key, *temp_val;
@@ -56,5 +56,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 	new = hash_table_helper(key, value);
 	walk = ht->array[index];
+	if (ht->array[index] == NULL)
+	{
+		ht->array[index] = new;
+		return (1);
+	}
+
+	while (walk)
+	{
+		if (strcmp(walk->key, key) == 0)
+		{
+			walk->value = (char *)value;
+			free(new);
+			return (1);
+		}
+		walk = walk->next;
+	}
+	new->next = ht->array[index];
+	ht->array[index] = new;
 	return (1);
 }
