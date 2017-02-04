@@ -6,7 +6,7 @@
  *
  * @array: pointer to array to be sorted
  * @size: size of @array
- * Return: sorted version of @array
+ * Return: void
  */
 void bubble_sort(int *array, size_t size)
 {
