@@ -9,31 +9,50 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temp, *placeholder;
+	listint_t *temp;
 	size_t i, j;
 
 	temp = malloc(sizeof(*temp));
 	if (temp == NULL)
 		return;
 
-	placeholder = malloc(sizeof(*placeholder));
-	if (placeholder == NULL)
-		return;
-
 	temp = *list;
 
 	i = 1;
-	while (i < sizeof(list))
+	while (i < sizeof(list)) /* might be sizeof(list) - 1) */
 	{
-		placeholder = temp[i];
-		j = i - 1;
-		while (temp[j] > placeholder)
+		j = i - 1; /* set j to 0 */
+		while (temp[j]->n > temp[j + 1]->n)
 		{
-			temp[j + 1] = temp[j];
-			print_list(temp);
-			j--;
+			if (temp[j] == NULL)
+				return;
+
+			/* move prev pointer */
+			if (temp[j]->prev != NULL)
+			{
+				temp[j + 1]->prev = temp[j]->prev;
+				(temp[j + 1]->prev)->next = temp[j + 1];
+			}
+			else
+				temp[j + 1]->prev = NULL;
+			temp[j]->prev = temp[j + 1];
+
+			/* move next pointer */
+			if (temp[j + 1]->next != NULL)
+			{
+				temp[j]->next = temp[j + 1]->next;
+				(temp[j]->next)->prev = temp[j];
+			}
+			else
+				temp[j]->next = NULL;
+			temp[j + 1]->next = temp[j];
+
+			print_list(temp); /* print as per instruction */
+			if (j > 0)
+				j--;
+			else
+				continue; /* break? */
 		}
-		temp[j + 1] = temp;
 		i++;
 	}
 }
