@@ -13,6 +13,8 @@ void selection_sort(int *array, size_t size)
 
 	if (array == NULL)
 		return;
+	if (size < 1)
+		return;
 
 	for (j = 0; j < size - 1; j++)
 	{
