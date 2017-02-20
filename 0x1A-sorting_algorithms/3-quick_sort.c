@@ -7,9 +7,10 @@
  *
  * Return: true or false
  */
-bool is_less(size_t first, size_t second)
+bool is_less(int first, int second)
 {
 	return (first < second);
+	printf("bool is working\n");
 }
 
 /**
@@ -19,9 +20,9 @@ bool is_less(size_t first, size_t second)
  *
  * Return: void
  */
-void quick_swap(size_t first, size_t second)
+void quick_swap(int first, int second)
 {
-	size_t temp;
+	int temp;
 
 	temp = first;
 	first = second;
@@ -38,13 +39,20 @@ void quick_swap(size_t first, size_t second)
  */
 int set_pivot(int *array, size_t start, size_t stop)
 {
-	size_t up, down, partition;
+	int up, down, partition;
 
+	printf("entering set_pivot\n");
 	up = start;
-	down = stop - 1;
+	printf("up = %d\n", up);
+	down = stop;
+	printf("down = %d\n", down);
 	partition = array[stop];
+	printf("partition = %d\n", partition);
 	if (up >= down)
+	{
+		printf("exiting here?\n");
 		return (start);
+	}
 	while (true)
 	{
 		while (is_less(array[up], partition))
@@ -67,17 +75,20 @@ int set_pivot(int *array, size_t start, size_t stop)
  * @start: left-most element of @array
  * @stop: right-most element of @array
  *
- * Return: void
+ * Return: sorted @array
  */
-void sort(int *array, size_t start, size_t stop)
+int *sort(int *array, size_t start, size_t stop)
 {
-	size_t pivot;
+	int pivot;
 
-	if (stop <= start)
-		return;
+	printf("entering sort\n");
+	if (start <= stop)
+		return (NULL);
 	pivot = set_pivot(array, start, stop);
 	sort(array, start, pivot - 1);
 	sort(array, pivot + 1, stop);
+	printf("exiting sort\n");
+	return (array);
 }
 
 /**
@@ -91,7 +102,11 @@ void quick_sort(int *array, size_t size)
 {
 	size_t start, stop;
 
+	printf("starting quick_sort\n");
 	start = array[0];
-	stop = array[size];
+	printf("start value = %lu\n", start);
+	stop = array[size - 1];
+	printf("stop value = %lu\n", stop);
 	sort(array, start, stop);
+	printf("exiting quick_sort\n");
 }
