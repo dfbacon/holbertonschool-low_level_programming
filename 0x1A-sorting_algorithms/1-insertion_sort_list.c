@@ -1,6 +1,64 @@
 #include "sort.h"
 
 /**
+ * get_node_at_index - locate the nth node of a listint_t type list
+ * @head: pointer to first node in list
+ * @index: index of the node to locate
+ *
+ * Return: the node at location @index
+ */
+listint_t *get_node_at_index(listint_t *head, size_t index)
+{
+	size_t size;
+
+	if (head == NULL)
+		return (NULL);
+	for (size = 0; size < index && head != NULL; size++)
+		head = head->next;
+	if (size != index)
+		return (NULL);
+	return (head);
+}
+
+/**
+ * list_len - return the number of elements in a listint_t type list
+ * @head: pointer to list to analyze
+ *
+ * Return: the number of elements in the @head list
+ */
+size_t list_len(const listint_t *head)
+{
+	size_t node_count;
+
+	node_count = 0;
+	while (head)
+	{
+		head = head->next;
+		node_count++;
+	}
+	return (node_count);
+}
+
+/**
+ * swap - swaps pointers of listint_t nodes
+ * @node_a: first node
+ * @node_b: second node
+ *
+ * Return: void
+ */
+void swap(listint_t *node_a, listint_t *node_b)
+{
+	if (node_a->prev)
+		(node_a->prev)->next = node_b;
+	if (node_b->next)
+		(node_b->next)->prev = node_a;
+	node_a->next = node_b->next;
+	node_b->prev = node_a->prev;
+	node_a->prev = node_b;
+	node_b->next = node_a;
+}
+
+/**
  * insertion_sort_list - write a function that sorts a doubly linked list of
  * integers in ascending order using the insertion sort algorithm
  *
@@ -10,71 +68,22 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *temp;
-	size_t i, j;
+	size_t i, j, length;
 
-	temp = malloc(sizeof(*temp));
-	if (temp == NULL)
+	length = list_len(*list);
+	if (length <= 1)
 		return;
-
-	temp = *list;
-
-	i = 1;
-	while (i < sizeof(list)) /* might be sizeof(list) - 1) */
+	for (i = 1; i < length; i++)
 	{
-		j = i - 1; /* set j to 0 */
-		while (temp[j]->n > temp[j + 1]->n)
+		temp = get_node_at_index(*list, i);
+		j = i;
+		while (j > 0 && temp->prev && (temp->prev)->n > temp->n)
 		{
-			if (temp[j] == NULL)
-				return;
-
-			/* move prev pointer */
-			if (temp[j]->prev != NULL)
-			{
-				temp[j + 1]->prev = temp[j]->prev;
-				(temp[j + 1]->prev)->next = temp[j + 1];
-			}
-			else
-				temp[j + 1]->prev = NULL;
-			temp[j]->prev = temp[j + 1];
-
-			/* move next pointer */
-			if (temp[j + 1]->next != NULL)
-			{
-				temp[j]->next = temp[j + 1]->next;
-				(temp[j]->next)->prev = temp[j];
-			}
-			else
-				temp[j]->next = NULL;
-			temp[j + 1]->next = temp[j];
-
-			print_list(temp); /* print as per instruction */
-			if (j > 0)
-				j--;
-			else
-				continue; /* break? */
+			swap(temp->prev, temp);
+			j--;
+			if (temp->prev == NULL)
+				*list = temp;
+			print_list(*list);
 		}
-		i++;
 	}
-}
-
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-	listint_t *list;
-	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-	size_t n = sizeof(array) / sizeof(array[0]);
-
-	list = create_listint(array, n);
-	if (!list)
-		return (1);
-	print_list(list);
-	printf("\n");
-	insertion_sort_list(&list);
-	printf("\n");
-	print_list(list);
-	return (0);
 }
