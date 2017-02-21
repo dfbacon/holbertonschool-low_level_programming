@@ -4,6 +4,8 @@
  * selection_sort - sort an array of integers using selection sort algorithm
  * @array: array of integers
  * @size: size of @array
+ *
+ * Return: void
  */
 void selection_sort(int *array, size_t size)
 {
