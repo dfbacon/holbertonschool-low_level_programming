@@ -26,28 +26,22 @@ void quick_swap(int *array, int first, int second, size_t size)
  */
 int set_pivot(int *array, int start, int stop, size_t size)
 {
-	size_t up, down;
-	int partition;
+	int up, down, pivot;
 
-	up = 0;
-	down = size - 1;
-	partition = array[size - 1];
-	if (down <= up)
-		return (up);
+	pivot = array[start];
+	up = start - 1;
+	down = stop;
 	while (true)
 	{
-		while ((array[up] < partition) == true)
+		while (array[up] < pivot)
 			up++;
-		while ((partition < array[down]) == true && (up < down))
+		while ((pivot < array[down]) && (up < down))
 			down--;
-		if (up >= down)
-			break;
-		quick_swap(array, up, down, size);
-		up++;
-		down--;
+		if (up < down)
+			quick_swap(array, up, down, size);
+		else
+			return (down + 1);
 	}
-	quick_swap(array, up, down, size);
-	return (up);
 }
 
 /**
@@ -63,7 +57,7 @@ void sort(int *array, int start, int stop, size_t size)
 {
 	int partition;
 
-	if(end - start < 2)
+	if(stop - start < 2)
 		return;
 	partition = set_pivot(array, start, stop, size);
 	sort(array, start, partition, size);
@@ -79,7 +73,5 @@ void sort(int *array, int start, int stop, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	int pivot;
-
 	sort(array, 0, size - 1, size);
 }

@@ -33,8 +33,9 @@ void selection_sort(int *array, size_t size);
 
 /* quick_sort */
 void quick_sort(int *array, size_t size);
-void quick_swap(int *array, int first, int second);
-int set_pivot(int *array, size_t size);
+void quick_swap(int *array, int first, int second, size_t size);
+int set_pivot(int *array, int start, int stop, size_t size);
+void sort(int *array, int start, int stop, size_t size);
 
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
