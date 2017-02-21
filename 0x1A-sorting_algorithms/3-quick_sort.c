@@ -64,7 +64,6 @@ void quick_sort(int *array, size_t size)
 	if (array[0] <= array[size - 1])
 		return;
 	pivot = set_pivot(array, size);
-	printf("pivot = %d\n", pivot);
-	/* need to make recursive calls */
-	printf("exiting sort\n");
+	set_pivot(array, size - 1);
+	(void) pivot;
 }
