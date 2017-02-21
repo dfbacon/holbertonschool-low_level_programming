@@ -32,26 +32,25 @@ void quick_swap(int first, int second)
 /**
  * set_pivot - set pivot value for quick_sort
  * @array: array of integers to sort
- * @start: left-most element in @array
- * @stop: right-most element in @array
+ * @size: size of @array
  *
  * Return: pivot in center position
  */
-int set_pivot(int *array, size_t start, size_t stop)
+int set_pivot(int *array, size_t size)
 {
-	int up, down, partition;
+	size_t up, down, partition;
 
 	printf("entering set_pivot\n");
-	up = start;
-	printf("up = %d\n", up);
-	down = stop;
-	printf("down = %d\n", down);
-	partition = array[stop];
-	printf("partition = %d\n", partition);
+	up = array[0];
+	printf("up = %lu\n", up);
+	down = array[size - 1];
+	printf("down = %lu\n", down);
+	partition = array[size - 1];
+	printf("partition = %lu\n", partition);
 	if (up >= down)
 	{
 		printf("exiting here?\n");
-		return (start);
+		return (up);
 	}
 	while (true)
 	{
@@ -70,28 +69,6 @@ int set_pivot(int *array, size_t start, size_t stop)
 }
 
 /**
- * sort - helper function for quick_sort
- * @array: array of integers to be sorted
- * @start: left-most element of @array
- * @stop: right-most element of @array
- *
- * Return: sorted @array
- */
-int *sort(int *array, size_t start, size_t stop)
-{
-	int pivot;
-
-	printf("entering sort\n");
-	if (start <= stop)
-		return (NULL);
-	pivot = set_pivot(array, start, stop);
-	sort(array, start, pivot - 1);
-	sort(array, pivot + 1, stop);
-	printf("exiting sort\n");
-	return (array);
-}
-
-/**
  * quick_sort - sort an array of integers in ascending order using quick sort
  * @array: array of integers to be sorted
  * @size: size of @array
@@ -100,13 +77,13 @@ int *sort(int *array, size_t start, size_t stop)
  */
 void quick_sort(int *array, size_t size)
 {
-	size_t start, stop;
+	int pivot;
 
-	printf("starting quick_sort\n");
-	start = array[0];
-	printf("start value = %lu\n", start);
-	stop = array[size - 1];
-	printf("stop value = %lu\n", stop);
-	sort(array, start, stop);
-	printf("exiting quick_sort\n");
+	printf("entering sort\n");
+	if (array[0] <= array[size - 1])
+		return;
+	pivot = set_pivot(array, size);
+	printf("pivot = %d\n", pivot);
+	/* need to make recursive calls */
+	printf("exiting sort\n");
 }

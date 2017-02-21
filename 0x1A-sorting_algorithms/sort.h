@@ -2,6 +2,7 @@
 #define SORT_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 /**
  * struct listint_s - Singly linked list node
@@ -21,6 +22,7 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 
 void bubble_sort(int *array, size_t size);
+
 /* insertion_sort_list */
 listint_t *get_node_at_index(listint_t *head, size_t index);
 size_t list_len(const listint_t *head);
@@ -28,7 +30,13 @@ void swap(listint_t *node_a, listint_t *node_b);
 void insertion_sort_list(listint_t **list);
 
 void selection_sort(int *array, size_t size);
+
+/* quick_sort */
 void quick_sort(int *array, size_t size);
+bool is_less(int first, int second);
+void quick_swap(int first, int second);
+int set_pivot(int *array, size_t size);
+
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
