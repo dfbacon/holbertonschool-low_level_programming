@@ -33,8 +33,7 @@ void selection_sort(int *array, size_t size);
 
 /* quick_sort */
 void quick_sort(int *array, size_t size);
-bool is_less(int first, int second);
-void quick_swap(int first, int second);
+void quick_swap(int *array, int first, int second);
 int set_pivot(int *array, size_t size);
 
 void shell_sort(int *array, size_t size);

@@ -7,13 +7,13 @@
  *
  * Return: void
  */
-void quick_swap(int first, int second)
+void quick_swap(int *array, int first, int second)
 {
-	int temp;
+	size_t temp;
 
-	temp = first;
-	first = second;
-	second = temp;
+	temp = array[first];
+	array[first] = array[second];
+	array[second] = temp;
 }
 
 /**
@@ -28,38 +28,24 @@ int set_pivot(int *array, size_t size)
 	size_t up, down;
 	int partition;
 
-	printf("entering set_pivot\n");
-	up = array[0];
-	down = array[size - 1];
+	up = 0;
+	down = size - 1;
 	partition = array[size - 1];
-	/**
-	if (up >= down)
-	{
-		printf("exiting here\n");
+	if (down <= up)
 		return (up);
-	}
-	*/
 	while (true)
 	{
-		printf("Entering while true loop\n");
 		while ((array[up] < partition) == true)
-		{
-			printf("entering first is_less\n");
-			printf("value of up = %lu\n", up);
 			up++;
-		}
 		while ((partition < array[down]) == true && (up < down))
-		{
-			printf("down = %lu\n", down);
 			down--;
-		}
 		if (up >= down)
 			break;
-		quick_swap(array[up], array[down]);
+		quick_swap(array, up, down);
 		up++;
 		down--;
 	}
-	quick_swap(array[up], array[down]);
+	quick_swap(array, up, down);
 	return (up);
 }
 
