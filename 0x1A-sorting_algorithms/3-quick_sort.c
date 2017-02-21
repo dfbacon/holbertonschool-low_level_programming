@@ -1,19 +1,6 @@
 #include "sort.h"
 
 /**
- * is_less - evaluates two elements
- * @first: first element
- * @second: second element
- *
- * Return: true or false
- */
-bool is_less(int first, int second)
-{
-	return (first < second);
-	printf("bool is working\n");
-}
-
-/**
  * quick_swap - swap two values
  * @first: first value
  * @second: second value
@@ -38,26 +25,34 @@ void quick_swap(int first, int second)
  */
 int set_pivot(int *array, size_t size)
 {
-	size_t up, down, partition;
+	size_t up, down;
+	int partition;
 
 	printf("entering set_pivot\n");
 	up = array[0];
-	printf("up = %lu\n", up);
 	down = array[size - 1];
-	printf("down = %lu\n", down);
 	partition = array[size - 1];
-	printf("partition = %lu\n", partition);
+	/**
 	if (up >= down)
 	{
-		printf("exiting here?\n");
+		printf("exiting here\n");
 		return (up);
 	}
+	*/
 	while (true)
 	{
-		while (is_less(array[up], partition))
+		printf("Entering while true loop\n");
+		while ((array[up] < partition) == true)
+		{
+			printf("entering first is_less\n");
+			printf("value of up = %lu\n", up);
 			up++;
-		while (is_less(partition, array[down]) && (up < down))
+		}
+		while ((partition < array[down]) == true && (up < down))
+		{
+			printf("down = %lu\n", down);
 			down--;
+		}
 		if (up >= down)
 			break;
 		quick_swap(array[up], array[down]);
