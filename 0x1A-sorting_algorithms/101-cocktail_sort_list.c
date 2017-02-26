@@ -80,21 +80,25 @@ void cocktail_sort_list(listint_t **list)
 		for (j = i; j < size - i - 1; j++)
 		{
 			temp = get_node_at_index(*list, j);
-			if (temp->n < (temp->next)->n)
+			if (temp->next && temp->n < (temp->next)->n)
 			{
 				swap(temp, temp->next);
+				print_list(*list);
 				flag = true;
 			}
 		}
+		/**
 		for (j = size - i - 2; j > i; j--)
 		{
 			temp = get_node_at_index(*list, j);
-			if (temp->n > (temp->prev)->n)
+			if (temp->prev && temp->n > (temp->prev)->n)
 			{
 				swap(temp, temp->next);
+				print_list(*list);
 				flag = true;
 			}
 		}
+		*/
 		if (!flag)
 			break;
 	}
