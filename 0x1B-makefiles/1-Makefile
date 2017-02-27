@@ -1,0 +1,4 @@
+SRC=$(wildcard *.c)
+CC=gcc
+all: m.h main.c holberton.c
+	$(CC) $(SRC) -o holberton
