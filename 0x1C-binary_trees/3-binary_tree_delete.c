@@ -8,15 +8,11 @@
  */
 void binary_tree_delete(binary_tree_t *tree)
 {
-	binary_tree_t *temp;
-
-	if (tree == NULL)
+	if (!tree)
 		return;
-	while (tree)
-	{
-		temp = tree;
-		tree = tree->next; /* not next, have to check right and left */
-		free(temp->n);
-		free(temp);
-	}
+	if (tree->left)
+		binary_tree_delete(tree->left);
+	if (tree->right)
+		binary_tree_delete(tree->right);
+	free(tree);
 }
