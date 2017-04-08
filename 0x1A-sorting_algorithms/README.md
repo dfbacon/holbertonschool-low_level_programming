@@ -74,4 +74,4 @@ Author
 ------
 All assignments completed by:
 * [Daniel Bacon](https://github.com/dfbacon)
-* [Colton Walker](https://github.com/Cwalker924).
+* [Colton Walker](https://github.com/Cwalker924)
