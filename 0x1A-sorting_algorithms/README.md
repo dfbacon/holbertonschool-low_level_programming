@@ -72,6 +72,6 @@ Extra Credit
 
 Author
 ------
-All assignments completed by me:
+All assignments completed by:
 * [Daniel Bacon](https://github.com/dfbacon)
 * [Colton Walker](https://github.com/Cwalker924).
