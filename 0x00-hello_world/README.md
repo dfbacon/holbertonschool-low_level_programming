@@ -14,6 +14,21 @@ C Requirements
 * All programs are compiled Ubuntu 14.04 LTS using gcc 4.8.4 (C90).
 * All code conforms to [Betty style](https://github.com/holbertonschool/Betty).
 
+Assignments
+-----------
+* 0-preprocessor
+* 1-compiler
+* 2-assembler
+* 3-name
+* 4-puts.c
+* 5-printf.c
+* 6-size.c
+
+Extra Credit
+------------
+* 100-intel
+* 101-quote.c
+
 Author
 ------
 All assignments completed by me, [Daniel Bacon](https://github.com/dfbacon).
