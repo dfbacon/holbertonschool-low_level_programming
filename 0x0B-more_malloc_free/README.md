@@ -1,8 +1,8 @@
 <img src="https://www.holbertonschool.com/assets/holberton-logo-1cc451260ca3cd297def53f2250a9794810667c7ca7b5fa5879a569a457bf16f.png" alt="Holberton logo">
 
-0x05. C - more pointers, arrays and strings
-===========================================
-C programming at [Holberton School](https://www.holbertonschool.com). The purpose of these assignments is to introduce the C programming language, specifically dynamic and automatic memory allocation.
+0x0B. C - more malloc, free
+===========================
+C programming at [Holberton School](https://www.holbertonschool.com). The purpose of these assignments is to introduce the C programming language, specifically dynamic and automatic memory allocation, and how to use the exit function.
 
 C Requirements
 --------------
