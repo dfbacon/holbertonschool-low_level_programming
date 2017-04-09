@@ -1,6 +1,6 @@
 #ifndef SEARCH_H
 #define SEARCH_H
-#inclue <stdio.h>
+#include <stdio.h>
 
 /**
  * struct listint_s - singly linked list
