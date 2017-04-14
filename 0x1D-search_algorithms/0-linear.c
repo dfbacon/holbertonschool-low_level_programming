@@ -2,7 +2,7 @@
 
 /**
  * linear_search - searches for a value in an array of integers, using
- Linear search algorithm
+ * Linear search algorithm
  *
  * Other requirements:
  * Must print every value that you compare to @value
