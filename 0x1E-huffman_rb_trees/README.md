@@ -13,9 +13,7 @@ gcc -Wall -Werror -Wextra -pedantic
 
 * All code conforms to [Betty style](https://github.com/holbertonschool/Betty).
 * Global variables are not allowed.
-* Standard library is not allowed(with exceptions).
-* Allowed functions:
-  * printf
+* Standard library is allowed.
 * main.c functions provided by Holberton School for testing
 
 Assignments
